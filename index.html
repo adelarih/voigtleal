@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOPSTACK | Soluções Inteligentes para Pequenas Empresas</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Transforme seu negócio com a TOPSTACK. IA, automações e software sob medida para eliminar tarefas, otimizar marketing e trazer clareza com BI.">
+  <meta name="keywords"
+    content="Inteligência Artificial, Automações, Software Sob Medida, Otimização de Marketing, Business Intelligence, TOPSTACK">
+  <meta name="author" content="TOPSTACK">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Great+Vibes&family=Pinyon+Script&family=Allison&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Merged Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
+            sans: ['"Lato"', '"Montserrat"', 'sans-serif'],
+            script: ['"Pinyon Script"', 'cursive'],
+            handwriting: ['"Allison"', 'cursive'],
+          },
+          colors: {
+            'wedding-green': '#3A5A40',
+            'wedding-sage': '#A3B18A',
+            'wedding-cream': '#DAD7CD',
+            'paper-white': '#F9F7F2',
+            wedding: {
+              green: '#2F5233',
+              darkGreen: '#1A2F1C',
+              lightGreen: '#E8F5E9',
+              sage: '#84A98C',
+              cream: '#F9F9F7',
+              accent: '#588157'
+            },
+            foliage: {
+              50: '#f2fcf5',
+              100: '#e1f8e8',
+              200: '#c3eed2',
+              300: '#94e0b3',
+              400: '#5cc990',
+              500: '#35ae74',
+              600: '#268c5b',
+              700: '#21704b',
+              800: '#1e593e',
+              900: '#194935',
+            },
+            stone: {
+              850: '#1c1917',
+            }
+          },
+          animation: {
+            marquee: 'marquee 90s linear infinite',
+          },
+          backgroundImage: {
+            'paper-texture': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .elegant-shape {
+      border-radius: 4rem 0 4rem 0;
+    }
+
+    .elegant-shape-reverse {
+      border-radius: 0 4rem 0 4rem;
+    }
+
+    .bg-cubes {
+      background-color: #e5e5e5;
+      background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    }
+
+    .organic-shape {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .torn-paper {
+      position: relative;
+      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    }
+
+    .torn-paper::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: #fff;
+      clip-path: polygon(0% 100%, 5% 40%, 10% 80%, 15% 30%, 20% 70%, 25% 40%, 30% 90%, 35% 20%, 40% 60%, 45% 40%, 50% 100%, 55% 30%, 60% 70%, 65% 10%, 70% 80%, 75% 40%, 80% 90%, 85% 30%, 90% 60%, 95% 40%, 100% 100%);
+    }
+
+    .torn-paper::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: #fff;
+      clip-path: polygon(0% 0%, 5% 60%, 10% 20%, 15% 70%, 20% 30%, 25% 60%, 30% 10%, 35% 80%, 40% 40%, 45% 60%, 50% 0%, 55% 70%, 60% 30%, 65% 90%, 70% 20%, 75% 60%, 80% 10%, 85% 70%, 90% 40%, 95% 60%, 100% 0%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

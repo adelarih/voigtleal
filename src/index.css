@@ -1,0 +1,154 @@
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --bg-main: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --header-height: 70px;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --shadow-premium: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glass-morphism {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in,
+.animate-fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Template 5 Styles */
+.organic-shape-1 {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.organic-shape-2 {
+  border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+}
+
+.path-line {
+  stroke-dasharray: 10;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.horizontal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.horizontal-container:active {
+  cursor: grabbing;
+}
+
+.organic-right-curve {
+  border-radius: 0 40% 60% 0 / 0 30% 70% 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(var(--tw-rotate, 0deg));
+  }
+
+  100% {
+    transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.group:hover .animate-float {
+  animation-play-state: paused;
+}
+
+/* Continuous line animation across Template 5 */
+.path-line {
+  stroke-dasharray: 10;
+  animation: dash-animation 60s linear infinite;
+}
+
+@keyframes dash-animation {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -2000;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
