@@ -51,7 +51,7 @@ const App: React.FC = () => {
       {/* Mobile Header - Visible only on mobile/tablet */}
       <div className="fixed top-0 left-0 w-full h-20 md:hidden flex items-center justify-between px-6 z-[100] bg-white/70 backdrop-blur-md border-b border-stone-100">
         <img
-          src="/src/assets/logo-3x1.png"
+          src="/assets/logo-3x1.png"
           alt="Logo"
           className="h-10 w-auto object-contain"
         />
@@ -95,7 +95,7 @@ const App: React.FC = () => {
       {/* Desktop Logo - Hidden on Mobile */}
       <div className="hidden md:block fixed top-10 left-12 lg:left-20 z-[80] pointer-events-none transition-opacity duration-300">
         <img
-          src="/src/assets/logo-3x1.png"
+          src="/assets/logo-3x1.png"
           alt="Celina & Eduardo Logo"
           className="h-12 md:h-16 lg:h-20 w-auto object-contain opacity-90"
         />

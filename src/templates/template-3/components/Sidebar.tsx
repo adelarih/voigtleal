@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onNavigate }) => {
     <nav className="h-20 lg:h-full w-full lg:w-24 bg-white/90 backdrop-blur-xl border-t lg:border-t-0 lg:border-r border-slate-100 flex flex-row lg:flex-col items-center justify-around lg:justify-start lg:py-8 fixed lg:relative bottom-0 left-0 z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] lg:shadow-none">
       <div className="hidden lg:block mb-12 px-4">
         <img
-          src="/src/assets/logo-3x1.png"
+          src="/assets/logo-3x1.png"
           alt="Logo"
           className="w-full h-auto object-contain"
         />

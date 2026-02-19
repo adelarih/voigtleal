@@ -3,11 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const photos = [
-  { id: 1, url: '/src/assets/v-1.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-4 row-span-2 rounded-[60px_20px_60px_20px]' },
-  { id: 2, url: '/src/assets/v-2.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-3 row-span-1 rounded-[20px_60px_20px_60px]' },
-  { id: 3, url: '/src/assets/v-3.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-3 row-span-1 rounded-full aspect-square' },
-  { id: 4, url: '/src/assets/v-4.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-2 row-span-2 rounded-[30px_70px_30px_70px]' },
-  { id: 5, url: '/src/assets/h-2.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-4 row-span-1 rounded-[100px_100px_20px_20px]' },
+  { id: 1, url: '/assets/v-1.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-4 row-span-2 rounded-[60px_20px_60px_20px]' },
+  { id: 2, url: '/assets/v-2.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-3 row-span-1 rounded-[20px_60px_20px_60px]' },
+  { id: 3, url: '/assets/v-3.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-3 row-span-1 rounded-full aspect-square' },
+  { id: 4, url: '/assets/v-4.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-2 row-span-2 rounded-[30px_70px_30px_70px]' },
+  { id: 5, url: '/assets/h-2.jpeg', className: 'w-full h-full object-cover', containerClass: 'col-span-4 row-span-1 rounded-[100px_100px_20px_20px]' },
 ];
 
 const Moments: React.FC = () => {

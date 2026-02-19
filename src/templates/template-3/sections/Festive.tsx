@@ -22,7 +22,7 @@ const Festive: React.FC = () => {
             className="organic-shape overflow-hidden shadow-lg h-full w-full"
           >
             <img
-              src="/src/assets/v-3.jpeg"
+              src="/assets/v-3.jpeg"
               alt="Festa Veleiros"
               className="w-full h-full object-cover"
             />

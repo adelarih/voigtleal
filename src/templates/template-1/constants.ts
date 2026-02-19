@@ -12,7 +12,7 @@ export const RELIGIOUS_CEREMONY: EventDetails = {
     "Após a celebração, receberemos os convidados para um breve brinde em nossa casa."
   ],
   attire: "Esporte Fino",
-  image: "/src/assets/v-2.jpeg"
+  image: "/assets/v-2.jpeg"
 };
 
 export const FESTIVE_CEREMONY: EventDetails = {
@@ -27,14 +27,14 @@ export const FESTIVE_CEREMONY: EventDetails = {
     "Será um momento especial, reunindo cerimônia e festa em um só lugar, para celebrarmos juntos esse novo capítulo."
   ],
   attire: "Social Completo / Passeio Completo",
-  image: "/src/assets/v-3.jpeg"
+  image: "/assets/v-3.jpeg"
 };
 
 export const GIFTS: GiftOption[] = [
   {
     id: 'custom',
     title: 'Presente Livre',
-    image: '/src/assets/presentes/presente-livre.png',
+    image: '/assets/presentes/presente-livre.png',
     isCustom: true,
     link: 'https://nubank.com.br/pagar/custom'
   },
@@ -42,63 +42,63 @@ export const GIFTS: GiftOption[] = [
     id: '1',
     title: 'Aula de culinária para o noivo aprender a cozinhar',
     price: 280.94,
-    image: '/src/assets/presentes/presente-aula-culinaria.png',
+    image: '/assets/presentes/presente-aula-culinaria.png',
     link: '#'
   },
   {
     id: '2',
     title: 'Coberto para a noiva que esta sempre comberta de razão',
     price: 526.08,
-    image: '/src/assets/presentes/presente-cobertor-noiva.png',
+    image: '/assets/presentes/presente-cobertor-noiva.png',
     link: '#'
   },
   {
     id: '3',
     title: 'Cota bike para o noivo acompanhar a noiva nas corridas',
     price: 448.36,
-    image: '/src/assets/presentes/presente-cota-bike.png',
+    image: '/assets/presentes/presente-cota-bike.png',
     link: '#'
   },
   {
     id: '4',
     title: 'Cota de le creuset para noiva mobiliar a cozinha',
     price: 572.70,
-    image: '/src/assets/presentes/presente-cota-le.png',
+    image: '/assets/presentes/presente-cota-le.png',
     link: '#'
   },
   {
     id: '5',
     title: 'Cota tenis de corrida para a noiva voar na sua primeira maratona',
     price: 396.56,
-    image: '/src/assets/presentes/presente-cota-tenis.png',
+    image: '/assets/presentes/presente-cota-tenis.png',
     link: '#'
   },
   {
     id: '6',
     title: 'Garanta seu ingresso na renovação de votos',
     price: 1049.34,
-    image: '/src/assets/presentes/presente-ingresso-renovacao.png',
+    image: '/assets/presentes/presente-ingresso-renovacao.png',
     link: '#'
   },
   {
     id: '7',
     title: 'Se por acaso você se sentir tocado',
     price: 2624.31,
-    image: '/src/assets/presentes/presente-se-por-acaso.png',
+    image: '/assets/presentes/presente-se-por-acaso.png',
     link: '#'
   },
   {
     id: '8',
     title: 'Alvará para meter o louco na festa',
     price: 676.32,
-    image: '/src/assets/presentes/presente-alvara-meter.png',
+    image: '/assets/presentes/presente-alvara-meter.png',
     link: '#'
   },
   {
     id: '9',
     title: 'Passe para furar a fila do bar',
     price: 914.64,
-    image: '/src/assets/presentes/presente-passe-furar.png',
+    image: '/assets/presentes/presente-passe-furar.png',
     link: '#'
   }
 ];

@@ -65,7 +65,7 @@ const FestiveSection: React.FC = () => {
           </div>
 
           <div className="organic-shape overflow-hidden h-[400px] border-4 border-emerald-800/50 shadow-2xl">
-            <img src="/src/assets/v-2.jpeg" alt="Venue" className="w-full h-full object-cover" />
+            <img src="/assets/v-2.jpeg" alt="Venue" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>

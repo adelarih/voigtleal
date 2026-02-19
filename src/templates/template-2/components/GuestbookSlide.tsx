@@ -158,7 +158,7 @@ const GuestbookSlide: React.FC = () => {
             {/* Image Container */}
             <div className="w-full aspect-[4/3] bg-stone-200 rounded-sm overflow-hidden relative border-4 border-white shadow-lg md:rotate-1 transform transition-transform duration-700 shrink-0">
               <img
-                src="/src/assets/h-2.jpeg"
+                src="/assets/h-2.jpeg"
                 alt="Noivos"
                 className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
               />

@@ -50,7 +50,7 @@ const HomeSlide: React.FC = () => {
             {/* The Image Frame */}
             <div className="relative w-full h-full rounded-[2rem] md:rounded-[2.5rem] border-[6px] md:border-[12px] border-white shadow-2xl overflow-hidden">
               <img
-                src="/src/assets/h-1.png"
+                src="/assets/h-1.png"
                 alt="Couple Landscape"
                 className="w-full h-full object-cover opacity-60 transition-transform duration-1000"
               />

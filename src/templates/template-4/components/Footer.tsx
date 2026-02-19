@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
 
         <div className="mb-8 flex flex-col items-center">
           <img
-            src="/src/assets/logo-3x1.png"
+            src="/assets/logo-3x1.png"
             alt="Logo Celina & Eduardo"
             className="h-12 w-auto object-contain mb-4 brightness-0 invert"
           />

@@ -35,7 +35,7 @@ const PartySlide: React.FC = () => {
             {/* Image Section */}
             <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden group shrink-0">
                 <img
-                    src="/src/assets/v-3.jpeg"
+                    src="/assets/v-3.jpeg"
                     alt="Venue Vibe"
                     className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
                 />

@@ -4,10 +4,10 @@ import { Section } from './components/Section';
 import { FoliageOverlay } from './components/FoliageOverlay';
 import { GIFT_LIST, FOOTER_LINKS, COLORS } from './constants';
 import { GuestMessage } from './types';
-import v1 from '../../assets/v-1.jpeg';
-import v2 from '../../assets/v-2.jpeg';
-import h2 from '../../assets/h-2.jpeg';
-import logo from '../../assets/logo-3x1.png';
+const v1 = "/assets/v-1.jpeg";
+const v2 = "/assets/v-2.jpeg";
+const h2 = "/assets/h-2.jpeg";
+const logo = "/assets/logo-3x1.png";
 import {
    ArrowRight,
    MapPin,

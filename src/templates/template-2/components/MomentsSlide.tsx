@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const MOMENTS_IMAGES = [
-  "/src/assets/v-1.jpeg",
-  "/src/assets/v-2.jpeg",
-  "/src/assets/v-3.jpeg",
-  "/src/assets/v-4.jpeg",
-  "/src/assets/h-2.jpeg"
+  "/assets/v-1.jpeg",
+  "/assets/v-2.jpeg",
+  "/assets/v-3.jpeg",
+  "/assets/v-4.jpeg",
+  "/assets/h-2.jpeg"
 ];
 
 const MomentsSlide: React.FC = () => {

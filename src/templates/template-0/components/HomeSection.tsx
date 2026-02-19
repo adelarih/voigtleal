@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const IMAGES = [
-  '/src/assets/v-3.jpeg',
-  '/src/assets/v-4.jpeg',
-  '/src/assets/v-2.jpeg',
-  '/src/assets/v-1.jpeg',
-  '/src/assets/h-2.jpeg',
+  '/assets/v-3.jpeg',
+  '/assets/v-4.jpeg',
+  '/assets/v-2.jpeg',
+  '/assets/v-1.jpeg',
+  '/assets/h-2.jpeg',
 ];
 
 const HomeSection: React.FC = () => {

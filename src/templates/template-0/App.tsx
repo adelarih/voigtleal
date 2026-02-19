@@ -61,7 +61,7 @@ const App: React.FC = () => {
             {/* Column 1: Logo & Intro */}
             <div className="space-y-6">
               <div className="relative inline-block">
-                <img src="/src/assets/logo-3x1.png" alt="Logo" className="h-20 md:h-24 w-auto object-contain brightness-0 invert opacity-90" />
+                <img src="/assets/logo-3x1.png" alt="Logo" className="h-20 md:h-24 w-auto object-contain brightness-0 invert opacity-90" />
               </div>
               <p className="text-gray-300 text-sm leading-relaxed max-w-xs font-light">
                 Celebrando o amor e a união de Celina Bins Voigt e Eduardo Coelho Leal. Obrigado por fazer parte da nossa história.

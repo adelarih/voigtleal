@@ -64,7 +64,7 @@ const ReligiousSection: React.FC = () => {
           </p>
           <div className="flex justify-center">
             <div className="organic-shape w-24 h-24 bg-emerald-200/50 flex items-center justify-center p-5">
-              <img src="/src/assets/logo-3x1.png" alt="Monograma" className="w-full h-auto object-contain opacity-80" />
+              <img src="/assets/logo-3x1.png" alt="Monograma" className="w-full h-auto object-contain opacity-80" />
             </div>
           </div>
         </div>

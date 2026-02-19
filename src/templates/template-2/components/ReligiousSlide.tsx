@@ -32,7 +32,7 @@ const ReligiousSlide: React.FC = () => {
             {/* Image Section */}
             <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden order-1 md:order-2 shrink-0">
                 <img
-                    src="/src/assets/v-2.jpeg"
+                    src="/assets/v-2.jpeg"
                     alt="Church Detail"
                     className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-1000"
                 />

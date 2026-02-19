@@ -8,7 +8,7 @@ const Home: React.FC = () => {
       {/* Monogram Backdrop - Viewport Relative Scale */}
       <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0">
         <img
-          src="/src/assets/logo-3x1.png"
+          src="/assets/logo-3x1.png"
           alt="Logo Backdrop"
           className="w-[200vw] lg:w-[450vw] max-w-none h-auto opacity-[0.2] lg:opacity-[0.3]"
         />
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
         <div className="relative z-10 flex items-center justify-center py-4">
           <div className="w-48 h-64 md:w-64 md:h-80 organic-shape overflow-hidden shadow-2xl bg-white relative">
             <img
-              src="/src/assets/v-1.jpeg"
+              src="/assets/v-1.jpeg"
               alt="Casal"
               className="w-full h-full object-cover"
             />

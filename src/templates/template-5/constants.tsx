@@ -2,15 +2,15 @@
 import { GiftItem } from './types';
 
 // Import images
-import img1 from '../../assets/presentes/presente-alvara-meter.png';
-import img2 from '../../assets/presentes/presente-aula-culinaria.png';
-import img3 from '../../assets/presentes/presente-cobertor-noiva.png';
-import img4 from '../../assets/presentes/presente-cota-bike.png';
-import img5 from '../../assets/presentes/presente-cota-le.png';
-import img6 from '../../assets/presentes/presente-cota-tenis.png';
-import img7 from '../../assets/presentes/presente-ingresso-renovacao.png';
-import img8 from '../../assets/presentes/presente-se-por-acaso.png';
-import img9 from '../../assets/presentes/presente-passe-furar.png';
+const img1 = "/assets/presentes/presente-alvara-meter.png";
+const img2 = "/assets/presentes/presente-aula-culinaria.png";
+const img3 = "/assets/presentes/presente-cobertor-noiva.png";
+const img4 = "/assets/presentes/presente-cota-bike.png";
+const img5 = "/assets/presentes/presente-cota-le.png";
+const img6 = "/assets/presentes/presente-cota-tenis.png";
+const img7 = "/assets/presentes/presente-ingresso-renovacao.png";
+const img8 = "/assets/presentes/presente-se-por-acaso.png";
+const img9 = "/assets/presentes/presente-passe-furar.png";
 
 export const COLORS = {
   white: '#FFFFFF',

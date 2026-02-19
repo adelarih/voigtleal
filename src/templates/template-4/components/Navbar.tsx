@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="flex items-center">
           <img
-            src="/src/assets/logo-3x1.png"
+            src="/assets/logo-3x1.png"
             alt="Logo"
             className="h-8 w-auto object-contain"
           />

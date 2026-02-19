@@ -23,7 +23,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           <div className="flex-shrink-0 flex items-center">
-            <img src="/src/assets/logo-3x1.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
+            <img src="/assets/logo-3x1.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
           </div>
 
           {/* Desktop Menu */}

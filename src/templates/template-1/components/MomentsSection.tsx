@@ -4,27 +4,27 @@ import { Camera } from 'lucide-react';
 const PHOTOS = [
   {
     id: 1,
-    url: "/src/assets/v-1.jpeg",
+    url: "/assets/v-1.jpeg",
     alt: "Nossos momentos"
   },
   {
     id: 2,
-    url: "/src/assets/v-2.jpeg",
+    url: "/assets/v-2.jpeg",
     alt: "Felicidade compartilhada"
   },
   {
     id: 3,
-    url: "/src/assets/v-3.jpeg",
+    url: "/assets/v-3.jpeg",
     alt: "Cumplicidade"
   },
   {
     id: 4,
-    url: "/src/assets/v-4.jpeg",
+    url: "/assets/v-4.jpeg",
     alt: "Amor eterno"
   },
   {
     id: 5,
-    url: "/src/assets/h-2.jpeg",
+    url: "/assets/h-2.jpeg",
     alt: "Nossa jornada"
   }
 ];

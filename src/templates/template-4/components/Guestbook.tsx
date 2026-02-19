@@ -95,7 +95,7 @@ export const Guestbook: React.FC = () => {
         {/* Foto Central */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[400px] pointer-events-none select-none">
           <div className="bg-white p-4 shadow-2xl border border-stone-100">
-            <img src="/src/assets/v-4.jpeg" alt="Nossa jornada" className="w-full h-[500px] object-cover" />
+            <img src="/assets/v-4.jpeg" alt="Nossa jornada" className="w-full h-[500px] object-cover" />
             <div className="absolute -bottom-4 -right-4 bg-wedding-darkGreen text-white px-6 py-2 text-xs font-bold shadow-xl rotate-3 uppercase">Nossa Jornada</div>
           </div>
         </div>
@@ -156,7 +156,7 @@ export const Guestbook: React.FC = () => {
       {/* Versão Mobile */}
       <div className="md:hidden flex flex-col items-center px-4 space-y-12">
         <div className="bg-white p-4 shadow-xl border border-stone-100 w-full max-w-sm relative">
-          <img src="/src/assets/v-4.jpeg" alt="Nossa jornada" className="w-full h-auto object-cover" />
+          <img src="/assets/v-4.jpeg" alt="Nossa jornada" className="w-full h-auto object-cover" />
           <div className="absolute -bottom-4 -right-4 bg-wedding-darkGreen text-white px-6 py-2 text-xs font-bold shadow-xl rotate-3 uppercase">Nossa Jornada</div>
         </div>
 

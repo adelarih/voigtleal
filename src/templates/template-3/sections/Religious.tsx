@@ -82,7 +82,7 @@ const Religious: React.FC = () => {
             className="rounded-2xl overflow-hidden shadow-lg h-[320px] w-full"
           >
             <img
-              src="/src/assets/v-2.jpeg"
+              src="/assets/v-2.jpeg"
               alt="Igreja"
               className="w-full h-full object-cover"
             />

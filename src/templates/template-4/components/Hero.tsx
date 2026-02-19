@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
         <div className="md:col-span-4 flex justify-center md:justify-end order-2 md:order-1">
           <CollageWrapper rotation="-rotate-3" className="w-64 md:w-80">
             <img
-              src="/src/assets/v-1.jpeg"
+              src="/assets/v-1.jpeg"
               alt="Casal Foto 1"
               className="w-full h-[400px] object-cover hover:scale-105 transition-all duration-700"
             />
@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
           <CollageWrapper rotation="rotate-0" className="p-8 md:p-12 bg-paper-white min-w-[300px]" tape>
             <div className="flex flex-col items-center space-y-6">
               <img
-                src="/src/assets/logo-3x1.png"
+                src="/assets/logo-3x1.png"
                 alt="Logo Celina & Eduardo"
                 className="w-[260px] h-auto object-contain"
               />
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
         <div className="md:col-span-4 flex justify-center md:justify-start order-3">
           <CollageWrapper rotation="rotate-2" className="w-56 md:w-72 mt-8 md:mt-0">
             <img
-              src="/src/assets/v-2.jpeg"
+              src="/assets/v-2.jpeg"
               alt="Casal Foto 2"
               className="w-full h-[300px] object-cover hover:scale-105 transition-all duration-700"
             />

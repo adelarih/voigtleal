@@ -5,15 +5,15 @@ import { Heart } from 'lucide-react';
 import { GiftItem } from '../types';
 
 const giftItems: GiftItem[] = [
-  { id: 1, title: 'Alvará p/ meter o louco na festa', price: 676.32, description: 'Licença oficial para diversão ilimitada.', image: '/src/assets/presentes/presente-alvara-meter.png' },
-  { id: 2, title: 'Aula de culinária p/ o noivo', price: 280.94, description: 'Para o noivo aprender a cozinhar.', image: '/src/assets/presentes/presente-aula-culinaria.png' },
-  { id: 3, title: 'Coberto p/ a noiva (de razão)', price: 526.08, description: 'Pois ela está sempre coberta de razão.', image: '/src/assets/presentes/presente-cobertor-noiva.png' },
-  { id: 4, title: 'Cota bike p/ o noivo', price: 448.36, description: 'Para acompanhar a noiva nas corridas.', image: '/src/assets/presentes/presente-cota-bike.png' },
-  { id: 5, title: 'Cota de Le Creuset', price: 572.70, description: 'Cozinha mobiliada com elegância.', image: '/src/assets/presentes/presente-cota-le.png' },
-  { id: 6, title: 'Cota Tênis de Corrida', price: 396.56, description: 'Para a noiva voar na primeira maratona.', image: '/src/assets/presentes/presente-cota-tenis.png' },
-  { id: 7, title: 'Ingresso Renovação de Votos', price: 1049.34, description: 'Garantia de presença no bis desse amor.', image: '/src/assets/presentes/presente-ingresso-renovacao.png' },
-  { id: 8, title: 'Se você se sentir tocado', price: 2624.31, description: 'Para o convidado mais generoso.', image: '/src/assets/presentes/presente-se-por-acaso.png' },
-  { id: 9, title: 'Passe furar fila do bar', price: 914.64, description: 'O item mais valioso desta lista.', image: '/src/assets/presentes/presente-passe-furar.png' },
+  { id: 1, title: 'Alvará p/ meter o louco na festa', price: 676.32, description: 'Licença oficial para diversão ilimitada.', image: '/assets/presentes/presente-alvara-meter.png' },
+  { id: 2, title: 'Aula de culinária p/ o noivo', price: 280.94, description: 'Para o noivo aprender a cozinhar.', image: '/assets/presentes/presente-aula-culinaria.png' },
+  { id: 3, title: 'Coberto p/ a noiva (de razão)', price: 526.08, description: 'Pois ela está sempre coberta de razão.', image: '/assets/presentes/presente-cobertor-noiva.png' },
+  { id: 4, title: 'Cota bike p/ o noivo', price: 448.36, description: 'Para acompanhar a noiva nas corridas.', image: '/assets/presentes/presente-cota-bike.png' },
+  { id: 5, title: 'Cota de Le Creuset', price: 572.70, description: 'Cozinha mobiliada com elegância.', image: '/assets/presentes/presente-cota-le.png' },
+  { id: 6, title: 'Cota Tênis de Corrida', price: 396.56, description: 'Para a noiva voar na primeira maratona.', image: '/assets/presentes/presente-cota-tenis.png' },
+  { id: 7, title: 'Ingresso Renovação de Votos', price: 1049.34, description: 'Garantia de presença no bis desse amor.', image: '/assets/presentes/presente-ingresso-renovacao.png' },
+  { id: 8, title: 'Se você se sentir tocado', price: 2624.31, description: 'Para o convidado mais generoso.', image: '/assets/presentes/presente-se-por-acaso.png' },
+  { id: 9, title: 'Passe furar fila do bar', price: 914.64, description: 'O item mais valioso desta lista.', image: '/assets/presentes/presente-passe-furar.png' },
 ];
 
 const Gifts: React.FC = () => {

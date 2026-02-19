@@ -85,7 +85,7 @@ export const GiftList: React.FC = () => {
               {/* Left Image - 1x1 Ratio */}
               <div className="w-full md:w-1/2 aspect-square md:aspect-auto overflow-hidden bg-stone-50">
                 <img
-                  src="/src/assets/presentes/presente-livre.png"
+                  src="/assets/presentes/presente-livre.png"
                   alt="Presente Livre"
                   className="w-full h-full object-cover"
                 />

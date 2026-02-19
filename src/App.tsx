@@ -14,10 +14,10 @@ const Template5 = lazy(() => import('./templates/template-5/App'));
 const Template6 = lazy(() => import('./templates/template-6/App'));
 
 // Assets for SEO and Favicons
-import faviconSvg from './assets/favicon-c&e/favicon.svg';
-import faviconIco from './assets/favicon-c&e/favicon.ico';
-import appleTouchIcon from './assets/favicon-c&e/apple-touch-icon.png';
-import ogImage from './assets/favicon-c&e/ce-topstack-og-image-1200x630-cf.png';
+const faviconSvg = "/assets/favicon-ce/favicon.svg";
+const faviconIco = "/assets/favicon-ce/favicon.ico";
+const appleTouchIcon = "/assets/favicon-ce/apple-touch-icon.png";
+const ogImage = "/assets/favicon-ce/ce-topstack-og-image-1200x630-cf.png";
 
 const TemplateRenderer = () => {
   const { activeTemplate } = useTemplate();

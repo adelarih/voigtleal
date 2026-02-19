@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="cursor-pointer" onClick={() => scrollTo('home')}>
           <img
-            src="/src/assets/logo-3x1.png"
+            src="/assets/logo-3x1.png"
             alt="Celina & Eduardo Logo"
             className={`h-8 md:h-12 object-contain transition-all duration-500 ${isScrolled ? 'brightness-100' : 'brightness-0 invert'}`}
           />

@@ -84,7 +84,7 @@ export const EventSection: React.FC = () => {
           <div className="w-full md:w-1/3 flex justify-center md:block">
             <CollageWrapper rotation="rotate-3" noPadding>
               <img
-                src="/src/assets/h-2.jpeg"
+                src="/assets/h-2.jpeg"
                 alt="Igreja Interior"
                 className="w-full h-80 object-cover"
               />
@@ -159,7 +159,7 @@ export const EventSection: React.FC = () => {
           <div className="w-full md:w-1/3 flex justify-center md:block">
             <CollageWrapper rotation="-rotate-2" noPadding>
               <img
-                src="/src/assets/v-3.jpeg"
+                src="/assets/v-3.jpeg"
                 alt="Festa ao ar livre"
                 className="w-full h-80 object-cover"
               />
