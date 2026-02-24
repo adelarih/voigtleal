@@ -71,6 +71,8 @@ const MomentsSection: React.FC = () => {
               className="grid grid-cols-5 gap-2 md:gap-4 mt-8"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
             >
               {PHOTOS.map((photo, index) => {
                 const isActive = index === activeIndex;
@@ -108,6 +110,8 @@ const MomentsSection: React.FC = () => {
             className="w-full lg:w-7/12 relative h-[500px] md:h-[600px] order-1 lg:order-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
           >
             {/* Decorative Border Layer */}
             <div className="absolute inset-4 border border-wedding-sage/30 rounded-tl-[6rem] rounded-br-[6rem] z-20 pointer-events-none transform translate-x-4 translate-y-4"></div>

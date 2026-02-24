@@ -1,24 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = (e: any) => {
-      // Catch scroll from window or any scrolling element (important for the builder/preview modes)
-      const scrollPos = e.target.scrollTop !== undefined ? e.target.scrollTop : window.scrollY;
-      setIsScrolled(scrollPos > 50);
+    const handleScroll = () => {
+      // Robust detection: find the highest scroll value among window and all possible containers
+      const containers = document.querySelectorAll('.overflow-y-auto');
+      let maxScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+      containers.forEach(container => {
+        if (container.scrollTop > maxScroll) {
+          maxScroll = container.scrollTop;
+        }
+      });
+
+      setIsScrolled(maxScroll > 25);
     };
 
-    // Use capture: true to catch scroll events from the scrolling divs in App.tsx
+    // Listen to scroll events on the window with capture to catch all bubbling scroll events
     window.addEventListener('scroll', handleScroll, true);
-    return () => window.removeEventListener('scroll', handleScroll, true);
+    // Also trigger on resize as it might affect container heights
+    window.addEventListener('resize', handleScroll);
+
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
+
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const scrollTo = (id: string) => {
     setIsMenuOpen(false);
+    if (pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -27,12 +52,13 @@ const Navbar: React.FC = () => {
     { label: 'Religioso', id: 'cerimonia-religiosa' },
     { label: 'Festa', id: 'cerimonia-festiva' },
     { label: 'Momentos', id: 'momentos' },
+    { label: 'Traje', id: 'traje' },
     { label: 'Presentes', id: 'lista-presentes' },
     { label: 'Recados', id: 'recados' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white shadow-lg py-3 border-b border-gray-100' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${(isScrolled || isMenuOpen) ? 'bg-white shadow-lg py-3 border-b border-gray-100' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
 
         {/* Logo */}

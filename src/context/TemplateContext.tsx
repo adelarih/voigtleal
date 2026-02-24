@@ -24,7 +24,7 @@ export const templates: Template[] = [
 ];
 
 export const TemplateProvider = ({ children }: { children: ReactNode }) => {
-  const [activeTemplate, setActiveTemplate] = useState('template-0');
+  const [activeTemplate, setActiveTemplate] = useState('template-1');
 
   return (
     <TemplateContext.Provider value={{ activeTemplate, setActiveTemplate }}>

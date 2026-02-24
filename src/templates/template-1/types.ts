@@ -5,6 +5,8 @@ export interface GiftOption {
   image: string;
   isCustom?: boolean;
   link?: string;
+  link_pagamento?: string;
+  link_pix?: string;
 }
 
 export interface GuestMessage {

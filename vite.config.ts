@@ -20,6 +20,15 @@ export default defineConfig({
     include: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
   },
   server: {
+    port: 5173,
+    strictPort: false,
+    hmr: {
+      host: 'localhost',
+      port: 5173,
+      // Adding clientPort to explicitly define the port for the HMR client
+      // This can help resolve WebSocket connection issues in some environments.
+      clientPort: 5173
+    },
     fs: {
       strict: false,
     }

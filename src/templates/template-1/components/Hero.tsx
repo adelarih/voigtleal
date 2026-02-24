@@ -1,9 +1,18 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Hero: React.FC = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const scrollToCeremony = () => {
-    document.getElementById('cerimonia-religiosa')?.scrollIntoView({ behavior: 'smooth' });
+    const id = 'cerimonia-religiosa';
+    if (pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -29,15 +38,7 @@ const Hero: React.FC = () => {
           <span className="block text-4xl md:text-6xl italic text-wedding-lightGreen my-2 font-light">&</span>
           Eduardo
         </h1>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-full text-white font-sans tracking-widest text-lg">
-            16 . 04 . 2026
-          </div>
-          <div className="w-px h-8 bg-white/40 hidden md:block"></div>
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-full text-white font-sans tracking-widest text-lg">
-            18 . 04 . 2026
-          </div>
-        </div>
+        {/* Dates hidden as requested */}
       </div>
 
       {/* Decorative Organic Shapes */}

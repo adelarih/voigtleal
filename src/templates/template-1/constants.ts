@@ -8,8 +8,10 @@ export const RELIGIOUS_CEREMONY: EventDetails = {
   address: "Rua Padre João Batista Reus, 1133 - Tristeza, Porto Alegre - RS, 91920-000",
   mapUrl: "https://www.google.com/maps/place/Igreja+do+Sagrado+Cora%C3%A7%C3%A3o+de+Jesus/@-30.1164978,-51.2534101,17z/data=!3m1!4b1!4m6!3m5!1s0x9519823a92384a8d:0xf53c6cadbe0cd40c!8m2!3d-30.1165025!4d-51.2508352!16s%2Fg%2F1ptwjqqff?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
   description: [
-    "Com alegria, convidamos você para a celebração do nosso casamento religioso, um momento íntimo e cheio de significado para nós.",
-    "Após a celebração, receberemos os convidados para um breve brinde em nossa casa."
+    "Com o coração cheio de alegria, queremos dividir com você um dos momentos mais importantes da nossa história.",
+    "Convidamos você para celebrar conosco o nosso casamento religioso — uma cerimônia mais íntima, cheia de significado e amor.",
+    "Depois, abriremos as portas da nossa casa para um brinde simples, preparado com carinho, para celebrar essa nova etapa ao lado de quem faz parte da nossa vida.",
+    "Por se tratar de uma celebração reservada, a confirmação de presença será realizada conforme orientações abaixo."
   ],
   attire: "Esporte Fino",
   image: "/assets/v-2.jpeg"
@@ -23,8 +25,11 @@ export const FESTIVE_CEREMONY: EventDetails = {
   address: "Av. Guaíba, 2941 - Vila Assunção, Porto Alegre - RS",
   mapUrl: "https://www.google.com/maps/place/Veleiros+do+Sul/@-30.0975023,-51.2589328,17z/data=!3m1!4b1!4m6!3m5!1s0x9519820471c941c5:0xe388c795d9812f07!8m2!3d-30.097507!4d-51.2563579!16s%2Fg%2F121k3mjw?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
   description: [
-    "Convidamos você para celebrar conosco o nosso casamento, em um dia pensado para ser vivido com presença, afeto e celebração.",
-    "Será um momento especial, reunindo cerimônia e festa em um só lugar, para celebrarmos juntos esse novo capítulo."
+    "Queremos que você esteja conosco em um dos dias mais importantes de nossas vidas.",
+    "Vamos nos casar ao ar livre, diante do Guaíba — um cenário especial para nós e para este momento que estamos vivendo. Escolhemos celebrar dessa forma, aberta e sincera, cercados por quem realmente faz parte da nossa história.",
+    "Após a cerimônia, daremos continuidade à celebração com a festa, que será no salão do clube. A proposta é simples: estarmos juntos para brindar, conversar, rir, dançar e aproveitar cada instante ao lado das pessoas que caminharam conosco até aqui — e que desejamos que sigam ao nosso lado nos próximos capítulos.",
+    "Contamos muito com a sua presença — ela tornará esse dia ainda mais especial e significativo para nós.",
+    "A confirmação de presença será feita pelo cerimonial Ana Bonilla, que entrará em contato nos próximos dias. Pedimos, por gentileza, que respondam assim que possível. Em caso de dúvidas, estamos à disposição."
   ],
   attire: "Social Completo / Passeio Completo",
   image: "/assets/v-3.jpeg"
@@ -42,42 +47,42 @@ export const GIFTS: GiftOption[] = [
     id: '1',
     title: 'Aula de culinária para o noivo aprender a cozinhar',
     price: 280.94,
-    image: '/assets/presentes/presente-aula-culinaria.png',
+    image: '/assets/presentes/presente-aula-culinaria.jpeg',
     link: '#'
   },
   {
     id: '2',
     title: 'Coberto para a noiva que esta sempre comberta de razão',
     price: 526.08,
-    image: '/assets/presentes/presente-cobertor-noiva.png',
+    image: '/assets/presentes/presente-cobertor-noiva.jpeg',
     link: '#'
   },
   {
     id: '3',
     title: 'Cota bike para o noivo acompanhar a noiva nas corridas',
     price: 448.36,
-    image: '/assets/presentes/presente-cota-bike.png',
+    image: '/assets/presentes/presente-cota-bike.jpeg',
     link: '#'
   },
   {
     id: '4',
     title: 'Cota de le creuset para noiva mobiliar a cozinha',
     price: 572.70,
-    image: '/assets/presentes/presente-cota-le.png',
+    image: '/assets/presentes/presente-cota-le.jpeg',
     link: '#'
   },
   {
     id: '5',
     title: 'Cota tenis de corrida para a noiva voar na sua primeira maratona',
     price: 396.56,
-    image: '/assets/presentes/presente-cota-tenis.png',
+    image: '/assets/presentes/presente-cota-tenis.jpeg',
     link: '#'
   },
   {
     id: '6',
     title: 'Garanta seu ingresso na renovação de votos',
     price: 1049.34,
-    image: '/assets/presentes/presente-ingresso-renovacao.png',
+    image: '/assets/presentes/presente-ingresso-renovacao.jpeg',
     link: '#'
   },
   {
@@ -91,14 +96,14 @@ export const GIFTS: GiftOption[] = [
     id: '8',
     title: 'Alvará para meter o louco na festa',
     price: 676.32,
-    image: '/assets/presentes/presente-alvara-meter.png',
+    image: '/assets/presentes/presente-alvara-meter.jpeg',
     link: '#'
   },
   {
     id: '9',
     title: 'Passe para furar a fila do bar',
     price: 914.64,
-    image: '/assets/presentes/presente-passe-furar.png',
+    image: '/assets/presentes/presente-passe-furar.jpeg',
     link: '#'
   }
 ];

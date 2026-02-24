@@ -1,7 +1,15 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const scrollToSection = (id: string) => {
+    if (pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -33,6 +41,7 @@ const Footer: React.FC = () => {
               <li><button onClick={() => scrollToSection('cerimonia-religiosa')} className="hover:text-wedding-sage transition-colors">Cerimônia Religiosa</button></li>
               <li><button onClick={() => scrollToSection('cerimonia-festiva')} className="hover:text-wedding-sage transition-colors">Cerimônia Festiva</button></li>
               <li><button onClick={() => scrollToSection('momentos')} className="hover:text-wedding-sage transition-colors">Momentos</button></li>
+              <li><button onClick={() => scrollToSection('traje')} className="hover:text-wedding-sage transition-colors">Traje</button></li>
               <li><button onClick={() => scrollToSection('lista-presentes')} className="hover:text-wedding-sage transition-colors">Lista de Presentes</button></li>
               <li><button onClick={() => scrollToSection('recados')} className="hover:text-wedding-sage transition-colors">Recados</button></li>
             </ul>

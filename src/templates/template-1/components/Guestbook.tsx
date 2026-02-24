@@ -42,8 +42,56 @@ const Guestbook: React.FC = () => {
     }
   };
 
-  // Duplicate messages for infinite loop (Set A + Set B)
-  const displayMessages = [...messages, ...messages];
+  // Duplicate messages for infinite loop (3 sets: A, B, C)
+  const displayMessages = [...messages, ...messages, ...messages];
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Initial scroll position to the middle set (Set B)
+  useEffect(() => {
+    if (!isLoading && messages.length > 0 && scrollContainerRef.current) {
+      const el = scrollContainerRef.current;
+      const third = el.scrollWidth / 3;
+      el.scrollLeft = third;
+    }
+  }, [isLoading, messages]);
+
+  // Handle auto-scroll logic
+  useEffect(() => {
+    if (isLoading || messages.length === 0 || isPaused) return;
+
+    const el = scrollContainerRef.current;
+    if (!el) return;
+
+    const autoScroll = setInterval(() => {
+      el.scrollLeft += 1;
+    }, 30); // ~33fps smooth scroll
+
+    return () => clearInterval(autoScroll);
+  }, [isLoading, messages, isPaused]);
+
+  // Handle infinite manual/auto scroll reset
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el || messages.length === 0) return;
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth } = el;
+      const third = scrollWidth / 3;
+
+      // If we scroll too far right (into Set C), jump back to Set B
+      if (scrollLeft >= (third * 2)) {
+        el.scrollLeft -= third;
+      }
+      // If we scroll too far left (into Set A), jump forward to Set B
+      else if (scrollLeft <= 0) {
+        el.scrollLeft += third;
+      }
+    };
+
+    el.addEventListener('scroll', handleScroll, { passive: true });
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, [messages]);
 
   const openForm = () => {
     setSidebarMode('form');
@@ -95,8 +143,13 @@ const Guestbook: React.FC = () => {
           </p>
         </div>
 
-        {/* Infinite Marquee Carousel */}
-        <div className="relative w-full mb-16 group min-h-[400px] flex items-center justify-center">
+        {/* Infinite Hibrid Carousel */}
+        <div
+          ref={scrollContainerRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          className={`relative w-full mb-16 group min-h-[400px] flex items-center ${messages.length > 0 ? 'overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing' : 'justify-center'}`}
+        >
           {isLoading ? (
             <div className="flex flex-col items-center gap-4 text-wedding-sage/40">
               <Loader2 className="w-12 h-12 animate-spin" />
@@ -108,7 +161,11 @@ const Guestbook: React.FC = () => {
               <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
               <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
 
-              <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused] py-12">
+              <div
+                className="flex w-max py-12 transition-all"
+                onTouchStart={() => setIsPaused(true)}
+                onTouchEnd={() => setIsPaused(false)}
+              >
                 {displayMessages.map((msg, index) => {
                   // Unique key for the duplicated list
                   const uniqueKey = `${msg.id}-${index}`;
