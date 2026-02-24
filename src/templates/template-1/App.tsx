@@ -47,9 +47,6 @@ const App: React.FC = () => {
           />
         )}
 
-        {/* Render AttireSection here ONLY if NOT in Festive-only mode */}
-        {!isFestaOnly && !isGiftsOnly && <AttireSection />}
-
         {!isReligiosoOnly && !isGiftsOnly && (
           <EventSection
             id="cerimonia-festiva"
@@ -58,8 +55,8 @@ const App: React.FC = () => {
           />
         )}
 
-        {/* Render AttireSection here ONLY if in Festive-only mode */}
-        {isFestaOnly && !isGiftsOnly && <AttireSection />}
+        {/* Render AttireSection here - Now always after ceremonies or deep links */}
+        {!isGiftsOnly && <AttireSection />}
 
         {!isGiftsOnly && <MomentsSection />}
 

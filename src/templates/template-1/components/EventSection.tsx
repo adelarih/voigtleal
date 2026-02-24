@@ -101,7 +101,7 @@ const EventSection: React.FC<EventSectionProps> = ({ id, data, isReversed = fals
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => setIsRSVPModalOpen(true)}
-                className="w-full flex items-center justify-center gap-3 py-5 bg-wedding-green text-white rounded-2xl shadow-xl hover:bg-wedding-darkGreen transition-all transform hover:-translate-y-1 font-bold uppercase text-xs tracking-[0.2em]"
+                className={`${id === 'cerimonia-religiosa' ? 'flex' : 'hidden'} w-full flex items-center justify-center gap-3 py-5 bg-wedding-green text-white rounded-2xl shadow-xl hover:bg-wedding-darkGreen transition-all transform hover:-translate-y-1 font-bold uppercase text-xs tracking-[0.2em]`}
               >
                 <CheckCircle className="w-4 h-4 text-wedding-sage" />
                 Confirmar Presença

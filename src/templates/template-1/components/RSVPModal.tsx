@@ -28,17 +28,10 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose, initialEvent = '
 
     useEffect(() => {
         if (isOpen) {
-            if (initialEvent === 'religious') {
-                setSelections({ religious: true, festive: false, toast: false });
-            } else if (initialEvent === 'festive') {
-                setSelections({ religious: false, festive: true, toast: false });
-            } else if (initialEvent === 'toast') {
-                setSelections({ religious: false, festive: false, toast: true });
-            } else {
-                setSelections({ religious: true, festive: true, toast: true });
-            }
+            // Force only religious ceremony selection
+            setSelections({ religious: true, festive: false, toast: false });
         }
-    }, [isOpen, initialEvent]);
+    }, [isOpen]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -123,8 +116,6 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose, initialEvent = '
                                         <div className="grid grid-cols-1 gap-3">
                                             {[
                                                 { id: 'religious', label: 'Cerimônia Religiosa', date: '16.04 - 19:00', icon: Church },
-                                                { id: 'festive', label: 'Cerimônia & Festa', date: '18.04 - 16:30', icon: PartyPopper },
-                                                { id: 'toast', label: 'Brinde em nossa casa', date: 'Pós-Religioso', icon: GlassWater }
                                             ].map((item) => {
                                                 const Icon = item.icon;
                                                 const isSelected = selections[item.id as keyof typeof selections];
