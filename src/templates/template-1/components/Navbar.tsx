@@ -40,10 +40,16 @@ const Navbar: React.FC = () => {
 
   const scrollTo = (id: string) => {
     setIsMenuOpen(false);
-    if (pathname !== '/') {
+
+    const isFestaPath = pathname === '/cerimonia-festiva' || pathname === '/festa';
+
+    // If we're not on home and not on festa page, go to home
+    if (pathname !== '/' && !isFestaPath) {
       navigate('/', { state: { scrollTo: id } });
       return;
     }
+
+    // Scroll locally
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -55,7 +61,11 @@ const Navbar: React.FC = () => {
     { label: 'Traje', id: 'traje' },
     { label: 'Presentes', id: 'lista-presentes' },
     { label: 'Recados', id: 'recados' },
-  ];
+  ].filter(item => {
+    const isFestaPath = pathname === '/cerimonia-festiva' || pathname === '/festa';
+    if (isFestaPath && item.id === 'cerimonia-religiosa') return false;
+    return true;
+  });
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${(isScrolled || isMenuOpen) ? 'bg-white shadow-lg py-3 border-b border-gray-100' : 'bg-transparent py-6'}`}>

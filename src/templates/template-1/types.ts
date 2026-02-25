@@ -23,7 +23,7 @@ export interface EventDetails {
   locationName: string;
   address?: string;
   mapUrl: string;
-  description: string[];
+  description: string | string[];
   attire: string;
   image: string;
 }

@@ -9,10 +9,32 @@ import Guestbook from './components/Guestbook';
 import AttireSection from './components/AttireSection';
 import Footer from './components/Footer';
 import { RELIGIOUS_CEREMONY, FESTIVE_CEREMONY } from './constants';
+import { contentService, CeremonyText } from '../../services/contentService';
 
 const App: React.FC = () => {
+  const [ceremonyTexts, setCeremonyTexts] = React.useState<CeremonyText[]>([]);
   const location = useLocation();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const fetchTexts = async () => {
+      try {
+        const data = await contentService.getAll();
+        setCeremonyTexts(data);
+      } catch (err) {
+        console.error('Failed to fetch ceremony texts', err);
+      }
+    };
+    fetchTexts();
+  }, []);
+
+  const getEventData = (type: 'religiosa' | 'festiva', defaultData: any) => {
+    const customText = ceremonyTexts.find(t => t.cerimonia.toLowerCase() === type);
+    if (customText && customText.conteudo) {
+      return { ...defaultData, description: customText.conteudo };
+    }
+    return defaultData;
+  };
   const isReligiosoOnly = location.pathname === '/cerimonia-religiosa' || location.pathname === '/religioso';
   const isFestaOnly = location.pathname === '/cerimonia-festiva' || location.pathname === '/festa';
   const isGiftsOnly = ['/presentes', '/lista-de-presentes', '/listadepresentes'].includes(location.pathname);
@@ -43,14 +65,14 @@ const App: React.FC = () => {
         {!isFestaOnly && !isGiftsOnly && (
           <EventSection
             id="cerimonia-religiosa"
-            data={RELIGIOUS_CEREMONY}
+            data={getEventData('religiosa', RELIGIOUS_CEREMONY)}
           />
         )}
 
         {!isReligiosoOnly && !isGiftsOnly && (
           <EventSection
             id="cerimonia-festiva"
-            data={FESTIVE_CEREMONY}
+            data={getEventData('festiva', FESTIVE_CEREMONY)}
             isReversed={true}
           />
         )}

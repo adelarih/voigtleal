@@ -6,6 +6,7 @@ import DashboardHome from './components/common/DashboardHome';
 import GuestbookManager from './components/common/GuestbookManager';
 import RSVPManager from './components/common/RSVPManager';
 import GiftsManager from './components/common/GiftsManager';
+import ContentManager from './components/common/ContentManager';
 import { TemplateProvider, useTemplate, templates } from './context/TemplateContext';
 import { Menu, X, LayoutGrid, Check, ArrowRight, Smartphone, Tablet, Monitor } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -181,8 +182,8 @@ const ConfigLayout = () => {
           Desktop: Full width/height (classic behavior)
           Mobile/Tablet: Centered with device frame simulation
       */}
-      <div className={`w-full h-full md:pl-[110px] pt-16 md:pt-0 transition-all duration-300 ${(deviceMode === 'desktop' && activePanel === 'templates') ? 'bg-white overflow-hidden' : 'bg-gray-100 overflow-y-auto'}`}>
-        <div className={`transition-all duration-300 ${(deviceMode === 'desktop' && activePanel === 'templates') ? 'h-full w-full' : 'p-3 sm:p-6 md:p-12'}`}>
+      <div className={`w-full h-full md:pl-[270px] pt-16 md:pt-0 transition-all duration-300 ${(deviceMode === 'desktop' && activePanel === 'templates') || activePanel === 'content' ? 'bg-white overflow-hidden' : 'bg-gray-100 overflow-y-auto'}`}>
+        <div className={`transition-all duration-300 ${(deviceMode === 'desktop' && activePanel === 'templates') || activePanel === 'content' ? 'h-full w-full' : 'p-3 sm:p-6 md:p-12'}`}>
 
 
           {activePanel === 'templates' ? (
@@ -221,6 +222,8 @@ const ConfigLayout = () => {
             <div className="max-w-6xl mx-auto bg-white rounded-[1.5rem] sm:rounded-[2.5rem] shadow-sm p-4 sm:p-8 border border-gray-100">
               <GiftsManager />
             </div>
+          ) : activePanel === 'content' ? (
+            <ContentManager />
           ) : activePanel === 'templates_selector' ? (
             <div className="max-w-7xl mx-auto space-y-10 font-sans">
               <header className="border-b border-gray-100 pb-8">

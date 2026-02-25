@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Loader2, X, CreditCard, QrCode, Check } from 'lucide-react';
+import { ArrowRight, Loader2, X, CreditCard, QrCode, Check, AlertCircle, Copy } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GIFTS } from '../constants';
 import { GiftOption } from '../types';
@@ -49,11 +49,12 @@ const GiftCard: React.FC<GiftCardProps> = ({ gift, index, onSelect }) => {
 
 const HorizontalGiftCard: React.FC<GiftCardProps & { onSelect: (gift: GiftOption, customAmount?: string) => void }> = ({ gift, onSelect }) => {
   const [customValue, setCustomValue] = React.useState<string>('');
+  const [copied, setCopied] = React.useState(false);
+  const pixKey = "01962706001";
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!customValue) return;
-    onSelect(gift, customValue);
+    onSelect(gift, customValue || undefined);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,6 +68,12 @@ const HorizontalGiftCard: React.FC<GiftCardProps & { onSelect: (gift: GiftOption
     setCustomValue(formatted);
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(pixKey);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
+  };
+
   return (
     <div className="group relative max-w-4xl mx-auto p-2 mt-20">
       <div className="absolute inset-0 border-2 border-wedding-green/30 bg-white/0 transition-transform duration-500 group-hover:scale-[1.02] group-hover:bg-wedding-green/5 z-0 rounded-tr-[5rem] rounded-bl-[5rem] -rotate-1"></div>
@@ -75,16 +82,50 @@ const HorizontalGiftCard: React.FC<GiftCardProps & { onSelect: (gift: GiftOption
           <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-500 z-10"></div>
           <img src={gift.image} alt={gift.title} className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-1000 ease-in-out" />
         </div>
-        <div className="md:w-[65%] p-8 md:p-12 flex flex-col items-center justify-center text-center bg-white">
-          <h3 className="font-serif text-3xl md:text-4xl text-wedding-green mb-4 leading-tight">{gift.title}</h3>
-          <form onSubmit={handleCustomSubmit} className="w-full pt-2">
-            <p className="font-serif text-lg text-wedding-sage mb-6 italic">Defina o valor do carinho</p>
-            <div className="relative group/input max-w-xs mx-auto">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-wedding-green font-serif text-xl pointer-events-none">R$</span>
-              <input type="tel" value={customValue} onChange={handleInputChange} placeholder="0,00" className="w-full pl-12 pr-14 py-4 border-b-2 border-wedding-green/20 bg-gray-50/50 rounded-t-xl font-serif text-2xl text-wedding-green placeholder-wedding-green/30 focus:outline-none focus:border-wedding-green focus:bg-white transition-all text-center" />
-              <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 p-3 text-wedding-green hover:text-wedding-darkGreen hover:scale-110 transition-all z-10" aria-label="Confirmar valor"><ArrowRight className="w-6 h-6" /></button>
+        <div className="md:w-[65%] p-8 md:p-12 flex flex-col items-center justify-center text-center bg-white space-y-8">
+          <div className="w-full">
+            <h3 className="font-serif text-3xl md:text-4xl text-wedding-green mb-4 leading-tight">{gift.title}</h3>
+            <form onSubmit={handleCustomSubmit} className="w-full">
+              <p className="font-serif text-lg text-wedding-sage mb-6 italic">Defina o valor do carinho</p>
+              <div className="relative group/input max-w-xs mx-auto">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-wedding-green font-serif text-xl pointer-events-none">R$</span>
+                <input type="tel" value={customValue} onChange={handleInputChange} placeholder="0,00" className="w-full pl-12 pr-14 py-4 border-b-2 border-wedding-green/20 bg-gray-50/50 rounded-t-xl font-serif text-2xl text-wedding-green placeholder-wedding-green/30 focus:outline-none focus:border-wedding-green focus:bg-white transition-all text-center" />
+                <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 p-3 text-wedding-green hover:text-wedding-darkGreen hover:scale-110 transition-all z-10" aria-label="Confirmar valor"><ArrowRight className="w-6 h-6" /></button>
+              </div>
+            </form>
+          </div>
+
+          <div className="w-full pt-8 border-t border-wedding-green/10">
+            <p className="font-serif text-sm text-wedding-green/60 italic mb-4">Ou se preferir, faça uma transferência direta:</p>
+            <div
+              onClick={handleCopy}
+              className="group/pix relative inline-flex items-center gap-4 px-6 py-3 bg-wedding-lightGreen/20 rounded-full border border-wedding-green/10 cursor-pointer hover:bg-wedding-green hover:border-wedding-green transition-all duration-300"
+            >
+              <span className="font-sans font-black text-xs md:text-sm text-wedding-green group-hover/pix:text-white transition-colors">
+                PIX: {pixKey}
+              </span>
+              <div className="flex items-center gap-2 pl-4 border-l border-wedding-green/20 group-hover/pix:border-white/30">
+                <span className="text-[9px] uppercase font-bold tracking-widest text-wedding-green group-hover/pix:text-white transition-colors">
+                  {copied ? 'Copiado!' : 'Copiar'}
+                </span>
+                {copied ? <Check size={14} className="text-wedding-green group-hover/pix:text-white" /> : <Copy size={14} className="text-wedding-green group-hover/pix:text-white" />}
+              </div>
+
+              <AnimatePresence>
+                {copied && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                    className="absolute -top-12 left-1/2 -translate-x-1/2 bg-wedding-green text-white py-2 px-4 rounded-xl text-[9px] font-bold uppercase tracking-widest shadow-xl z-20 flex items-center gap-2 whitespace-nowrap"
+                  >
+                    <Check size={12} />
+                    Chave copiada!
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -92,11 +133,24 @@ const HorizontalGiftCard: React.FC<GiftCardProps & { onSelect: (gift: GiftOption
 };
 
 const PaymentModal: React.FC<{ gift: GiftOption; amount?: string; onClose: () => void }> = ({ gift, amount, onClose }) => {
+  const [errorMsg, setErrorMsg] = React.useState<string | null>(null);
+
   const handlePayment = (type: 'card' | 'pix') => {
     const link = type === 'card' ? gift.link_pagamento : gift.link_pix;
-    let finalLink = link || '';
+    if (!link) {
+      setErrorMsg(`O pagamento via ${type === 'card' ? 'Cartão' : 'Pix'} ainda não foi configurado.`);
+      setTimeout(() => setErrorMsg(null), 3000);
+      return;
+    }
 
-    if (finalLink && amount) {
+    let finalLink = link;
+
+    // Ensure absolute URL
+    if (!/^https?:\/\//i.test(finalLink)) {
+      finalLink = `https://${finalLink}`;
+    }
+
+    if (amount) {
       const rawValue = parseFloat(amount.replace(/\./g, '').replace(',', '.')).toFixed(2);
       finalLink = finalLink.includes('?') ? `${finalLink}&amount=${rawValue}` : `${finalLink}?amount=${rawValue}`;
     }
@@ -129,20 +183,36 @@ const PaymentModal: React.FC<{ gift: GiftOption; amount?: string; onClose: () =>
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <button onClick={() => handlePayment('card')} className="flex flex-col items-center justify-center p-6 border-2 border-wedding-green/10 rounded-3xl hover:border-wedding-green hover:bg-wedding-green/5 transition-all group">
-            <div className="w-12 h-12 bg-wedding-green/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-wedding-green/10 transition-colors">
-              <CreditCard className="text-wedding-green" size={24} />
-            </div>
-            <span className="font-sans font-bold text-[10px] uppercase tracking-[0.2em] text-wedding-green">Cartão de Crédito</span>
-          </button>
+        <div className="relative">
+          <AnimatePresence>
+            {errorMsg && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="absolute -top-12 left-0 right-0 bg-red-50 text-red-600 py-2 px-4 rounded-xl text-[10px] font-bold uppercase tracking-widest border border-red-100 shadow-sm z-20 flex items-center justify-center gap-2"
+              >
+                <AlertCircle size={14} />
+                {errorMsg}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          <button onClick={() => handlePayment('pix')} className="flex flex-col items-center justify-center p-6 border-2 border-wedding-green/10 rounded-3xl hover:border-wedding-green hover:bg-wedding-green/5 transition-all group">
-            <div className="w-12 h-12 bg-wedding-green/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-wedding-green/10 transition-colors">
-              <QrCode className="text-wedding-green" size={24} />
-            </div>
-            <span className="font-sans font-bold text-[10px] uppercase tracking-[0.2em] text-wedding-green">Pix Instantâneo</span>
-          </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button onClick={() => handlePayment('card')} className="flex flex-col items-center justify-center p-6 border-2 border-wedding-green/10 rounded-3xl hover:border-wedding-green hover:bg-wedding-green/5 transition-all group">
+              <div className="w-12 h-12 bg-wedding-green/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-wedding-green/10 transition-colors">
+                <CreditCard className="text-wedding-green" size={24} />
+              </div>
+              <span className="font-sans font-bold text-[10px] uppercase tracking-[0.2em] text-wedding-green">Cartão de Crédito</span>
+            </button>
+
+            <button onClick={() => handlePayment('pix')} className="flex flex-col items-center justify-center p-6 border-2 border-wedding-green/10 rounded-3xl hover:border-wedding-green hover:bg-wedding-green/5 transition-all group">
+              <div className="w-12 h-12 bg-wedding-green/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-wedding-green/10 transition-colors">
+                <QrCode className="text-wedding-green" size={24} />
+              </div>
+              <span className="font-sans font-bold text-[10px] uppercase tracking-[0.2em] text-wedding-green">Pix Instantâneo</span>
+            </button>
+          </div>
         </div>
       </motion.div>
     </div>

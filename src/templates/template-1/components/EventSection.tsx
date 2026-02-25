@@ -65,9 +65,16 @@ const EventSection: React.FC<EventSectionProps> = ({ id, data, isReversed = fals
           </h2>
 
           <div className="space-y-4 font-sans text-gray-600 text-lg leading-relaxed">
-            {data.description.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {Array.isArray(data.description) ? (
+              data.description.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))
+            ) : (
+              <div
+                className="rich-text-content"
+                dangerouslySetInnerHTML={{ __html: data.description }}
+              />
+            )}
           </div>
 
           <div className="flex flex-col gap-4 pt-6">

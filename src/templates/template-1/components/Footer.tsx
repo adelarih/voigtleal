@@ -6,7 +6,9 @@ const Footer: React.FC = () => {
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
-    if (pathname !== '/') {
+    const isFestaPath = pathname === '/cerimonia-festiva' || pathname === '/festa';
+
+    if (pathname !== '/' && !isFestaPath) {
       navigate('/', { state: { scrollTo: id } });
       return;
     }
@@ -38,7 +40,9 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold text-lg mb-6">Navegação</h4>
             <ul className="space-y-4 text-sm">
               <li><button onClick={() => scrollToSection('home')} className="hover:text-wedding-sage transition-colors">Home</button></li>
-              <li><button onClick={() => scrollToSection('cerimonia-religiosa')} className="hover:text-wedding-sage transition-colors">Cerimônia Religiosa</button></li>
+              {!(pathname === '/cerimonia-festiva' || pathname === '/festa') && (
+                <li><button onClick={() => scrollToSection('cerimonia-religiosa')} className="hover:text-wedding-sage transition-colors">Cerimônia Religiosa</button></li>
+              )}
               <li><button onClick={() => scrollToSection('cerimonia-festiva')} className="hover:text-wedding-sage transition-colors">Cerimônia Festiva</button></li>
               <li><button onClick={() => scrollToSection('momentos')} className="hover:text-wedding-sage transition-colors">Momentos</button></li>
               <li><button onClick={() => scrollToSection('traje')} className="hover:text-wedding-sage transition-colors">Traje</button></li>
@@ -51,14 +55,18 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold text-lg mb-6">Eventos</h4>
             <ul className="space-y-4 text-sm">
-              <li className="flex flex-col">
-                <span className="text-white/50 text-xs uppercase">Religioso</span>
-                <span className="text-white/90">Paróquia Sagrado Coração</span>
-              </li>
-              <li className="flex flex-col">
-                <span className="text-white/50 text-xs uppercase">Recepção</span>
-                <span className="text-white/90">Av. Belém Velho, 4139</span>
-              </li>
+              {!(pathname === '/cerimonia-festiva' || pathname === '/festa') && (
+                <>
+                  <li className="flex flex-col">
+                    <span className="text-white/50 text-xs uppercase">Religioso</span>
+                    <span className="text-white/90">Paróquia Sagrado Coração</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="text-white/50 text-xs uppercase">Recepção</span>
+                    <span className="text-white/90">Av. Belém Velho, 4139</span>
+                  </li>
+                </>
+              )}
               <li className="flex flex-col">
                 <span className="text-white/50 text-xs uppercase">Festiva</span>
                 <span className="text-white/90">Veleiros do Sul</span>

@@ -58,6 +58,7 @@ const Sidebar = (props: SidebarProps) => {
     const mainNav = [
         { id: 'dashboard', label: 'Dashboard', icon: Home },
         { id: 'templates_selector', label: 'Modelos de Convite', icon: LayoutGrid },
+        { id: 'content', label: 'Conteudo', icon: Type },
         { id: 'analytics', label: 'Recados', icon: MessageSquare },
         { id: 'rsvp', label: 'Confirmados', icon: Users },
         { id: 'presents', label: 'Lista de Presentes', icon: Gift },
