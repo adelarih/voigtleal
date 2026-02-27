@@ -20,7 +20,7 @@ export const RELIGIOUS_CEREMONY: EventDetails = {
 export const FESTIVE_CEREMONY: EventDetails = {
   title: "Cerimônia Festiva",
   date: "18 de Abril de 2026",
-  time: "16h30",
+  time: "16h00",
   locationName: "Veleiros do Sul",
   address: "Av. Guaíba, 2941 - Vila Assunção, Porto Alegre - RS",
   mapUrl: "https://www.google.com/maps/place/Veleiros+do+Sul/@-30.0975023,-51.2589328,17z/data=!3m1!4b1!4m6!3m5!1s0x9519820471c941c5:0xe388c795d9812f07!8m2!3d-30.097507!4d-51.2563579!16s%2Fg%2F121k3mjw?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
