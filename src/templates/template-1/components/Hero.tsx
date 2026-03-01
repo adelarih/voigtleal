@@ -3,16 +3,17 @@ import { ArrowDown } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Hero: React.FC = () => {
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
 
-  const scrollToCeremony = () => {
-    const id = 'cerimonia-religiosa';
-    if (pathname !== '/') {
-      navigate('/', { state: { scrollTo: id } });
-      return;
+  const scrollToContent = () => {
+    const nextSection = document.getElementById('home')?.nextElementSibling;
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
     }
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -47,7 +48,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll Down Indicator */}
       <button
-        onClick={scrollToCeremony}
+        onClick={scrollToContent}
         className="absolute bottom-10 z-30 animate-bounce text-wedding-green p-3 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white transition-all"
         aria-label="Rolar para baixo"
       >
